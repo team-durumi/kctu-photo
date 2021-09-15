@@ -1,0 +1,24 @@
+{
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "@tailwindcss/typography": "github.com/team-durumi/tailwind-aa-theme",
+      "autoprefixer": "github.com/team-durumi/tailwind-aa-theme",
+      "postcss": "github.com/team-durumi/tailwind-aa-theme",
+      "postcss-cli": "github.com/team-durumi/tailwind-aa-theme",
+      "postcss-purgecss": "github.com/team-durumi/tailwind-aa-theme",
+      "tailwindcss": "github.com/team-durumi/tailwind-aa-theme"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.3.0",
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.10",
+    "postcss-cli": "^8.0.0",
+    "postcss-purgecss": "^2.0.3",
+    "tailwindcss": "^2.0.1"
+  },
+  "name": "kctu-photo",
+  "version": "0.1.0"
+}

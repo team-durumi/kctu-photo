@@ -1,7 +1,28 @@
 main:
-  - name: posts
+  - name: 홈
+    url: /
+    weight: -120
+  - name: 파일탐색
+    url: /items/
+    weight: -90
+  - name: 주제별
+    url: /subjects/
+    weight: -80
+  - name: 조직별
+    url: /creators/
+    weight: -70
+  - name: 장소별
+    url: /venues/
+    weight: -60
+  - name: 행사별
+    url: /events/
+    weight: -50            
+  - name: 검색
+    url: /search/
+    weight: -40           
+  - name: 블로그
     url: /posts/
-    weight: -110
+    weight: -30
   - name: all
     url: /posts/
     weight: 1
@@ -10,6 +31,6 @@ main:
     url: /posts/featured
     weight: 2
     parent: posts
-  - name: about
+  - name: 소개
     url: /about/
     weight: -100
