@@ -1,7 +1,7 @@
 # https://gohugo.io/getting-started/configuration/
 
 title: 민주노총사진아카이브
-baseURL: https://kctu-photo.durumi.io
+baseURL: https://compassionate-mayer-7c07b1.netlify.app
 languageCode: ko-kr
 hasCJKLanguage: true
 
