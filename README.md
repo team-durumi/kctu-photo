@@ -33,9 +33,9 @@ hugo server -D
 hugo mod tidy && hugo --gc --minify
 ```
 
-### item rclone
+### items rclone sync
 ```
-rclone sync --progress aa-data:kctu-photo /home/ubuntu/kctu-photo/content/items
+rclone sync --progress aa-data:kctu-photo /workspaces/kctu-photo/content/items
 ```
 
 ## Data
