@@ -31,6 +31,3 @@ main:
     url: /posts/featured
     weight: 2
     parent: posts
-  - name: 소개
-    url: /about/
-    weight: -100
