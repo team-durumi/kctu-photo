@@ -35,7 +35,10 @@ hugo mod tidy && hugo --gc --minify
 
 ### items rclone sync
 ```
-rclone sync --progress aa-data:kctu-photo /workspaces/kctu-photo/content/items
+$ rclone sync --progress aa-data:kctu-photo /workspaces/kctu-photo/content/items
+$ find . -type f -name '*.md' -print # double-check things that would be deleted
+$ find . -type f -name '*.md' -print -delete 
+$ find . -type d -name '@eaDir' -print
 ```
 
 ## Data
@@ -50,6 +53,8 @@ https://docs.datafabric.hpe.com/62/AdministratorGuide/MountingNFSonMacClient.htm
 showmount -e 218.235.95.188
 sudo mount -t nfs -o vers=3 218.235.95.188:/volume1/photo_archives /Users/woonjjang/data
 ```
+Transferred:       13.160Gi / 13.160 GiByte, 100%, 19.877 MiByte/s, ETA 0s
+Transferred:         4843 / 4843, 100%
 
 ### 민주노총 아카이브 태그 기준(taxonomy)
 - 날짜 기준 : 년 / 월 / 일 (field_date)
