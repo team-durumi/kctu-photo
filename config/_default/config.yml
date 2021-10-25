@@ -6,7 +6,8 @@ languageCode: ko-kr
 hasCJKLanguage: true
 
 theme:
-  github.com/team-durumi/tailwind-aa-theme
+  - github.com/team-durumi/tailwind-aa-theme
+  - github.com/team-durumi/hugo-search-fuse-js-aa
 
 build:
   writeStats: true

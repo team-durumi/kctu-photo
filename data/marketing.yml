@@ -3,7 +3,7 @@
 ###################### user/org information #####################
 user:
   title : KCTU 사진아카이브
-  tagLine : KCTU 사진아카이브 설명 KCTU 사진아카이브 설명KCTU 사진아카이브 설명KCTU 사진아카이브 설명KCTU 사진아카이브 설명KCTU 사진아카이브 설명
+  tagLine : 생산의 주역이며 사회개혁과 역사발전의 원동력인 우리들 노동자는 오늘 자주적이고 민주적인 노동조합의 전국중앙조직, 전국민주노동조합총연맹의 창립을 선언한다. 
   tel : 02-0000-0000
   fax : 02-0000-0000
   email : email@kctu.org
@@ -16,13 +16,13 @@ user:
     이메일 : email@kctu.org
     대표자 : 대표자
     year : "2021"
-    github : mailto:email@kctu.org
-    url : mailto:email@kctu.org
-    caption: Email
-    fb : http://facebook.com
-    tw : http://twitter.com
-    instagram : http://instagram.com
-    linkedin : http://linkedin.com
+    github : http://nodong.org/
+    url : http://nodong.org/
+    caption: 민주노총
+    fb : 
+    tw : 
+    instagram : 
+    linkedin : 
 
 ######## Partials/app에 노출되는 사용자 데이터를 편집합니다. ########
 

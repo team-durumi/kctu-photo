@@ -1,0 +1,12 @@
+{{ define "header" }}
+  {{ partial "basic/header-logo.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  {{ partial "marketing/slider_alpine" . }}
+	{{- with .Site.GetPage "/items/mockup.md" }}
+		{{ partial "marketing/photo-of-the-day" . }}
+	{{ end -}}
+	{{ partial "marketing/cta.html" . }}
+	{{ partial "marketing/faq-accordion" . }}
+{{ end }}

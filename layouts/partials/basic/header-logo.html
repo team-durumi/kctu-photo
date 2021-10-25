@@ -8,7 +8,7 @@
         </svg>
         <!-- <span class="ml-3 text-xl">{{ .Site.Title }}</span> -->
       </a>
-      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-items-start">
         {{ range site.Menus.main }}
         <a class="mr-5 hover:border-b-2 hover:border-blue-600 hover:text-blue-600" href="{{ .URL | absURL }}">{{ .Name }}</a>
         {{ end }}

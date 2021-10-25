@@ -1,33 +1,16 @@
 main:
-  - name: 홈
-    url: /
-    weight: -120
-  - name: 파일탐색
-    url: /items/
-    weight: -90
-  - name: 주제별
-    url: /subjects/
-    weight: -80
-  - name: 조직별
-    url: /creators/
-    weight: -70
-  - name: 장소별
-    url: /venues/
-    weight: -60
-  - name: 행사별
-    url: /events/
-    weight: -50            
   - name: 검색
     url: /search/
-    weight: -40           
-  - name: 블로그
-    url: /posts/
-    weight: -30
-  - name: all
-    url: /posts/
-    weight: 1
-    parent: posts
-  - name: featured posts
-    url: /posts/featured
-    weight: 2
-    parent: posts
+    weight: -90  
+  - name: 탐색
+    url: /items/
+    weight: -100
+  - name: 컬렉션
+    url: /collection-list/
+    weight: -80
+  - name: 전시
+    url: /exhibitions/
+    weight: -70
+  - name: 오늘의 사진
+    url: /exhibitions/
+    weight: -60    
