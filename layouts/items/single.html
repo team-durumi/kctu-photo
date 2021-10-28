@@ -1,0 +1,82 @@
+{{ define "header" }}
+  {{ partial "basic/header-logo.html" . }}
+{{ end }}
+
+{{ define "main" }}
+	{{ partial "app/browse-breadcrumb.html" . }}
+	
+	<!-- IDENTITY STATEMENT AREA | Summary Sections -->
+	<div class="px-5 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden sm:rounded-lg">
+		<!-- <div class="px-5 py-5 sm:px-6"> -->
+		<div class="flex flex-wrap -mb-4 md:mb-0">
+			<div class="w-3/4">
+				<!-- Youtube / Vimeo -->
+				{{ if .Params.link }}	
+					<iframe class="rounded w-full h-96 aspect-w-4 aspect-h-3" src="{{ .Params.link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					{{ .Params.shotlist }}
+				{{ else }}
+					<!-- item IMG / PDF / Youtube -->
+					<div class="w-full">
+						{{ if .Params.components }}
+							{{ range .Params.Components }}
+								{{ $extension := index (last 1 (split  . "." )) 0 }}
+								{{ if eq $extension "pdf" }}
+									<embed src="{{ . }}" width="100%;" height="800px;" alt="pdf">
+								{{ else }}
+									<img class="h-full rounded w-full object-cover object-center mb-6" src="{{ . | absURL }}" alt="item object">
+								{{ end }}
+							{{ end }}
+						{{ else }}
+							<img class="h-full rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/462x384" alt="item object">
+						{{ end }}
+					</div>
+				{{ end }}  
+			</div>
+			<div class="w-1/4">
+				<div class="pl-5">
+					<!-- title first -->
+					<div x-data="{ open: true }" class="border-b">
+						<div @click="open = !open" class="flex items-center justify-between py-4 text-gray-700 font-semibold">
+							<p>이름</p>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+								<path fill-rule="evenodd" :d="open ? 'M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' : 'M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z'" clip-rule="evenodd" />
+							</svg>
+						</div>
+						<div x-show.transition.in.duration.800ms="open" class="py-4">
+							<p class="text-gray-500">{{ .Title }}</p>
+						</div>
+					</div>
+					<!-- rest of the metas -->
+					{{ $.Scratch.Set "eligibleKeys" (slice "description" "events" "subjects" "creators" "venues" "tags") }}
+					{{ $.Scratch.Set "arrayKeys" (slice "subjects" "creators" "events" "venues" "tags") }}
+					{{ range $key, $value := .Params }}
+						{{ if and ( in ($.Scratch.Get "eligibleKeys") $key) ($.Param $key) }}
+							<div x-data="{ open: false }" class="border-b">
+								<div @click="open = !open" class="flex items-center justify-between py-4 text-gray-700 font-semibold">
+									<p>{{ $key }}</p>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" :d="open ? 'M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' : 'M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z'" clip-rule="evenodd" />
+									</svg>
+								</div>
+								<div x-show.transition.in.duration.800ms="open" class="py-4">
+									{{ if in ($.Scratch.Get "arrayKeys") $key }}
+										{{ range $.Param $key }}
+											<a href="#" class="inline-block w-max px-2 py-1 mb-2 bg-white dark:bg-black border-2 border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-blue-600 dark:text-blue-500 strong">{{ . }}</a>
+										{{ end }}
+									{{ else }}
+										<p class="text-gray-500">{{ $.Param $key }}</p>
+									{{ end }}
+								</div>
+							</div>
+						{{ end }}
+					{{ end }}						
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="p-5">
+		<h5 class="font-semibold text-lg">관련자료</h5>
+		<div class="px-5">{{ partial "app/item-list-sections.html" .Parent }}</div>
+	</div>
+{{ end }}
