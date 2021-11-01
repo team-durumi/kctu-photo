@@ -1,16 +1,83 @@
 main:
   - name: 검색
     url: /search/
-    weight: -90  
+    weight: -90
   - name: 탐색
     url: /items/
     weight: -100
   - name: 컬렉션
-    url: /collection-list/
+    url: collection-list
     weight: -80
-  - name: 전시
+  - name: 주제별 컬렉션
+    url: subjects
+    weight: 1
+    parent: 컬렉션
+  - name: 조직별 컬렉션
+    url: creators
+    weight: 2
+    parent: 컬렉션
+  - name: 장소별 컬렉션
+    url: venues
+    weight: 3
+    parent: 컬렉션 
+  - name: 행사별 컬렉션
+    url: events
+    weight: 4
+    parent: 컬렉션
+  - name: 오늘의사진
     url: /exhibitions/
     weight: -70
+
+footer:
+  - name: 소개
+    url: /
+    weight: -100
+  - name: 공지사항
+    url: posts
+    weight: 1
+    parent: 소개 
   - name: 오늘의 사진
-    url: /exhibitions/
-    weight: -60    
+    url: exhibitions
+    weight: 2
+    parent: 소개
+  - name: 자료
+    url: items
+    weight: -90
+  - name: 탐색
+    url: items
+    weight: 1
+    parent: 자료
+  - name: 검색
+    url: search
+    weight: 2
+    parent: 자료
+  - name: 컬렉션
+    url: collection-list
+    weight: -80
+  - name: 주제별 컬렉션
+    url: subjects
+    weight: 1
+    parent: 컬렉션
+  - name: 조직별 컬렉션
+    url: creators
+    weight: 2
+    parent: 컬렉션
+  - name: 장소별 컬렉션
+    url: venues
+    weight: 3
+    parent: 컬렉션 
+  - name: 행사별 컬렉션
+    url: events
+    weight: 4
+    parent: 컬렉션 
+  - name: 운영 및 협력
+    url: 
+    weight: -70
+  - name: 민주노총 홈페이지
+    url: https://nodong.org
+    weight: 1
+    parent: 운영 및 협력 
+  - name: 노동과 세계
+    url: http://worknworld.kctu.org
+    weight: 2
+    parent: 운영 및 협력                           

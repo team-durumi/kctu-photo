@@ -3,10 +3,10 @@
 {{ end }}
 
 {{ define "main" }}
+  <!-- 공지사항 -->
   {{ partial "marketing/slider_alpine" . }}
-	{{- with .Site.GetPage "/items/mockup.md" }}
+	{{- with .Site.GetPage "/exhibitions/photo-today/21-11-01.md" }}
 		{{ partial "marketing/photo-of-the-day" . }}
 	{{ end -}}
-	{{ partial "marketing/cta.html" . }}
-	{{ partial "marketing/faq-accordion" . }}
+  <!-- 랜덤 사진 영역 --> 
 {{ end }}
