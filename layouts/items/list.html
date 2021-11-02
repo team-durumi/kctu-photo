@@ -1,0 +1,49 @@
+{{ define "header" }}
+  {{ partial "basic/header-logo.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <section class="w-full p-24">
+    <h2 class="text-center text-4xl font-semibold mb-3">탐색</h2>
+    <span class="block text-center text-gray-600 text-lg font-normal">민주노총의 2020, 2021년 사진을 공개합니다.</span>
+  </section>
+
+  <div class="w-full h-full block bg-gray-200 dark:bg-gray-600 pt-10 pb-20">
+    <!-- {{ partial "app/browse-breadcrumb.html" . }} -->
+    <div class="px-10">
+      <section class="">
+        <div class="pb-3 border-b-2 border-gray-300">
+          <span class="font-extrabold text-gray-500">n</span>
+          <span class="font-extrabold text-gray-500">장의 사진</span>
+          <!-- <div class="float-right">
+            <span class="font-extrabold text-gray-500">옵션명</span>
+            <span class="font-extrabold text-gray-500">이름별</span>
+          </div> -->
+        </div>
+
+        <div class="pb-3 border-b-2 border-gray-300">
+          <!-- <div class="my-3">
+            <button class="px-4 py-1 text-gray-600 font-medium">모두선택</button>
+            |
+            <button class="px-4 py-1 text-gray-600 font-medium">모두해제</button>
+          </div> -->
+          <div class="mb-2">
+            <br>
+            {{ $itemsSection := .Site.GetPage "section" "items" }}
+            {{ range $itemsSection.Sections }}
+              <div class="mb-3">
+                <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1  bg-white dark:bg-black border-2 border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-blue-600 dark:text-blue-500 strong">{{ .Title }}</a>
+              </div>
+              {{ range .Sections }}
+                <div>
+                  <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1  bg-white dark:bg-black border-2 border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-blue-600 dark:text-blue-500 strong">{{ .Title }}</a>
+                </div>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </section>
+      {{ partial "app/item-list-sections.html" . }}
+    </div>
+  </div>
+{{ end }}
