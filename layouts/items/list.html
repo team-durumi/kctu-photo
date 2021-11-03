@@ -13,7 +13,7 @@
     <div class="px-10">
       <section class="">
         <div class="pb-3 border-b-2 border-gray-300">
-          <span class="font-extrabold text-gray-500">n</span>
+          <span class="font-extrabold text-gray-500">{{ len ( .RegularPagesRecursive) }}</span>
           <span class="font-extrabold text-gray-500">장의 사진</span>
           <!-- <div class="float-right">
             <span class="font-extrabold text-gray-500">옵션명</span>
@@ -30,16 +30,20 @@
           <div class="mb-2">
             <br>
             {{ $itemsSection := .Site.GetPage "section" "items" }}
-            {{ range $itemsSection.Sections }}
-              <div class="mb-3">
-                <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1  bg-white dark:bg-black border-2 border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-blue-600 dark:text-blue-500 strong">{{ .Title }}</a>
-              </div>
-              {{ range .Sections }}
-                <div>
-                  <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1  bg-white dark:bg-black border-2 border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-blue-600 dark:text-blue-500 strong">{{ .Title }}</a>
-                </div>
+            <div class="mb-3">
+              {{ with .Site.GetPage "items"}}
+                <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if eq $.Path (lower .Title) }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">전체</a>
               {{ end }}
-            {{ end }}
+              {{ range $itemsSection.Sections }}
+                <span class="text-gray-500">|</span>
+                {{ $currentURI := split $.Path "/" }}
+                {{ $secondSectionBool := in $currentURI (lower .Title) }}
+                <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if $secondSectionBool }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">{{ .Title }}</a>
+                {{ range .Sections }}
+                  <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if and ( $secondSectionBool ) (in $currentURI (lower .Title)) }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">{{ .Title }}</a>
+                {{ end }}
+              {{ end }}
+            </div>
           </div>
         </div>
       </section>
