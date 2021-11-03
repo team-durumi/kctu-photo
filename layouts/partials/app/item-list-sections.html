@@ -1,9 +1,9 @@
 <section class="text-gray-900 body-font">
-  <div class="flex flex-wrap -mx-2 my-4">
-    <!-- {{ .TableOfContents }} -->
-    {{ $childpages := .RegularPagesRecursive }}
-    {{ if $childpages }}
-      {{ range $childpages.ByTitle }}
+  {{ if .RegularPagesRecursive }}
+    {{ $paginator := .Paginate .RegularPagesRecursive }}
+    <div class="flex flex-wrap -mx-2 my-4">
+      <!-- {{ .TableOfContents }} -->
+      {{ range $paginator.Pages }}
         <div class="w-full 2xl:w-1/6 xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 p-2">
           <a href="{{ .Permalink }}">
             <div class="bg-white w-full hover:bg-gray-200 border border-gray-100 dark:bg-gray-900 dark:hover:bg-gray-700 dark:border dark:border-gray-200 p-2 rounded-lg">
@@ -30,13 +30,15 @@
           </a>
         </div>
       {{ end }}
-    {{ else }}
+    </div>
+    <div class="paginator">
+      {{ partial "app/pagination.html" $paginator }}
+    </div>
+  {{ else }}
+    <div class="flex flex-wrap -mx-2 my-4">
       <div class="xl:w-1/3 md:w-1/2 p-4 h-screen text-gray-900 dark:text-gray-100">
-          현재 포함된 자료가 없습니다. 
+        현재 포함된 자료가 없습니다. 
       </div>
-    {{ end }}
-  </div>
-  <div class="paginator">
-    {{ template "_internal/pagination.html" . }}
-  </div>
+    </div>
+  {{ end }}
 </section> 
