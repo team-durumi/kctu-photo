@@ -2,3 +2,7 @@ public
 node_modules
 resources
 
+# data
+drive
+s3
+nas
