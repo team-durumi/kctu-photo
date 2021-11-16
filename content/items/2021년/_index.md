@@ -1,6 +1,6 @@
 ---
+lastmod: '2021-11-10'
 title: 2021년
 weight: 
 type: page
-lastmod: '2021-10-09'
 ---

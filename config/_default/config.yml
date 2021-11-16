@@ -4,6 +4,7 @@ title: 민주노총사진아카이브
 baseURL: https://kctu-photo.durumi.io
 languageCode: ko-kr
 hasCJKLanguage: true
+paginate: 60
 
 theme:
   - github.com/team-durumi/tailwind-aa-theme
@@ -18,3 +19,5 @@ taxonomies:
   creator: creators
   venue: venues
   event: events
+  dates: dates
+
