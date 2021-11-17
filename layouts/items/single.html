@@ -77,6 +77,11 @@
 
 	<div class="p-5">
 		<h5 class="font-semibold text-lg">관련자료</h5>
-		<div class="px-5">{{ partial "app/item-list-sections.html" .Parent }}</div>
+    <div class="flex flex-wrap -mx-2 my-4">
+			{{ $relatives := .Parent.RegularPagesRecursive | shuffle | first 12 }}
+			{{ range $relatives}}
+				{{ partial "app/item-card.html" .}}
+			{{ end }}
+		</div>
 	</div>
 {{ end }}
