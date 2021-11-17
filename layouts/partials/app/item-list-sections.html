@@ -12,7 +12,7 @@
                 {{ range .Params.components }}
                   {{ $fileExtension := index (last 1 (split . ".")) 0 }}
                   {{ if in "jpg jpeg png gif" $fileExtension}}
-                    <img class="h-40 rounded w-full object-cover object-center mb-6" src="{{ .| absURL }}" alt="item image">
+                    <img class="h-40 rounded w-full object-cover object-center mb-6" src="/cdn-cgi/image/fit=scale-down,width=300/{{ .| absURL }}" alt="item image">
                   {{ else if in . "imagedelivery.net" }}
                     <embed src="{{ . }}" width="100%;" height="auto;" alt="item object" class="h-40 rounded w-full object-cover object-center mb-6">
                   {{ else }}
