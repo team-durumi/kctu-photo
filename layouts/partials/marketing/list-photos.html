@@ -9,6 +9,7 @@
     <div class="flex flex-wrap -m-4">
     {{ $items := .Site.GetPage "section" "items" }}
     {{ $randomEight := $items.RegularPagesRecursive | shuffle | first 8 }}
+    {{ $settings := .Site.Params }}
     {{ range $randomEight }}
       <div class="w-full xl:w-1/4 md:w-1/2 p-4">
         <a href="{{ .Permalink }}">
@@ -16,8 +17,9 @@
             {{ if .Params.components}}
               {{ range .Params.components }}
                 {{ $fileExtension := index (last 1 (split . ".")) 0 }}
-                {{ if in "jpg jpeg png gif" $fileExtension}}
-                  <img class="absolute inset-0 w-full h-48 object-cover object-center" src="/cdn-cgi/image/fit=scale-down,width=300/{{ .| absURL }}" alt="item image">
+                {{ if in "jpg jpeg png gif" $fileExtension }}
+                  {{ $src := partial "basic/cf-image.html" (dict "style" "thumb" "src" . "settings" $settings) }}
+                  <img class="absolute inset-0 w-full h-48 object-cover object-center" src="{{ $src }}" alt="{{ $.Title }}">
                 {{ end }}
               {{ end }}
             {{ end }}
@@ -30,4 +32,4 @@
     {{ end }}
     </div>
   </div>  
-</section> 
+</section>
