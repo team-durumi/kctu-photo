@@ -8,3 +8,6 @@ hugo_stats.json
 drive
 s3
 nas
+/.frontmatter
+/frontmatter.json
+/content/frontmatter.json
