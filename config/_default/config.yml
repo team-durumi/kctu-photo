@@ -5,6 +5,7 @@ baseURL: https://kctu-photo.durumi.io
 languageCode: ko-kr
 hasCJKLanguage: true
 paginate: 60
+defaultContentLanguage: ko
 
 theme:
   - github.com/team-durumi/tailwind-aa-theme
