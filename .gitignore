@@ -1,8 +1,13 @@
 public
 node_modules
 resources
+.hugo_build.lock
+hugo_stats.json
 
 # data
 drive
 s3
 nas
+/.frontmatter
+/frontmatter.json
+/content/frontmatter.json

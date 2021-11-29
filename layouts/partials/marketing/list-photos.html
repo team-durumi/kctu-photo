@@ -7,86 +7,29 @@
       <p class="lg:w-1/2 w-full text-right leading-relaxed font-medium text-blue-600 hover:underline"><a href="/items">전체 탐색하기</a></p>
     </div>
     <div class="flex flex-wrap -m-4">
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <a href="/subjects">
+    {{ $items := .Site.GetPage "section" "items" }}
+    {{ $randomEight := $items.RegularPagesRecursive | shuffle | first 8 }}
+    {{ $settings := .Site.Params }}
+    {{ range $randomEight }}
+      <div class="w-full xl:w-1/4 md:w-1/2 p-4">
+        <a href="{{ .Permalink }}">
           <div class="flex relative">
-            <img class="absolute inset-0 w-full h-48 object-cover object-center" src="https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020%eb%85%84/1%ec%9b%94/20200106_%eb%a7%88%ec%82%ac%ed%9a%8c+%ea%b3%a0+%eb%ac%b8%ec%a4%91%ec%9b%90+%ea%b8%b0%ec%88%98+%ec%a3%bd%ec%9d%8c%ec%9d%98+%ec%a7%84%ec%83%81%ea%b7%9c%eb%aa%85%ea%b3%bc+%ec%b1%85%ec%9e%84%ec%9e%90+%ec%b2%98%eb%b2%8c+%ec%9c%84%ed%95%9c+%ec%8b%9c%eb%af%bc%eb%8c%80%ec%b1%85%ec%9c%84%ec%9b%90%ed%9a%8c+%ec%b2%ad%ec%99%80%eb%8c%80+%ec%83%81%ec%97%ac+%ed%96%89%ec%a7%84/_CTU3676.jpg">
-            <div class="px-8 py-10 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
-              <h1 class="tracking-widest text-xl font-medium text-gray-100 pt-24 mb-3">Shooting Stars</h1>
+            {{ if .Params.components}}
+              {{ range .Params.components }}
+                {{ $fileExtension := index (last 1 (split . ".")) 0 }}
+                {{ if in "jpg jpeg png gif" $fileExtension }}
+                  {{ $src := partial "basic/cf-image.html" (dict "style" "thumb" "src" . "settings" $settings) }}
+                  <img class="absolute inset-0 w-full h-48 object-cover object-center" src="{{ $src }}" alt="{{ $.Title }}">
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            <div class="px-4 py-5 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
+              <h1 class="absolute inset-x-0 bottom-0 m-3 text-center tracking-widest text-sm font-medium text-gray-100 pt-24">{{ .Title }}</h1>
             </div>
           </div>
         </a>
       </div>
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <a href="/subjects">
-          <div class="flex relative">
-            <img class="absolute inset-0 w-full h-48 object-cover object-center" src="https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020%eb%85%84/1%ec%9b%94/20200106_%eb%a7%88%ec%82%ac%ed%9a%8c+%ea%b3%a0+%eb%ac%b8%ec%a4%91%ec%9b%90+%ea%b8%b0%ec%88%98+%ec%a3%bd%ec%9d%8c%ec%9d%98+%ec%a7%84%ec%83%81%ea%b7%9c%eb%aa%85%ea%b3%bc+%ec%b1%85%ec%9e%84%ec%9e%90+%ec%b2%98%eb%b2%8c+%ec%9c%84%ed%95%9c+%ec%8b%9c%eb%af%bc%eb%8c%80%ec%b1%85%ec%9c%84%ec%9b%90%ed%9a%8c+%ec%b2%ad%ec%99%80%eb%8c%80+%ec%83%81%ec%97%ac+%ed%96%89%ec%a7%84/_CTU3676.jpg">
-            <div class="px-8 py-10 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
-              <h1 class="tracking-widest text-xl font-medium text-gray-100 pt-24 mb-3">Shooting Stars</h1>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <a href="/subjects">
-          <div class="flex relative">
-            <img class="absolute inset-0 w-full h-48 object-cover object-center" src="https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020%eb%85%84/1%ec%9b%94/20200106_%eb%a7%88%ec%82%ac%ed%9a%8c+%ea%b3%a0+%eb%ac%b8%ec%a4%91%ec%9b%90+%ea%b8%b0%ec%88%98+%ec%a3%bd%ec%9d%8c%ec%9d%98+%ec%a7%84%ec%83%81%ea%b7%9c%eb%aa%85%ea%b3%bc+%ec%b1%85%ec%9e%84%ec%9e%90+%ec%b2%98%eb%b2%8c+%ec%9c%84%ed%95%9c+%ec%8b%9c%eb%af%bc%eb%8c%80%ec%b1%85%ec%9c%84%ec%9b%90%ed%9a%8c+%ec%b2%ad%ec%99%80%eb%8c%80+%ec%83%81%ec%97%ac+%ed%96%89%ec%a7%84/_CTU3676.jpg">
-            <div class="px-8 py-10 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
-              <h1 class="tracking-widest text-xl font-medium text-gray-100 pt-24 mb-3">Shooting Stars</h1>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <a href="/subjects">
-          <div class="flex relative">
-            <img class="absolute inset-0 w-full h-48 object-cover object-center" src="https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020%eb%85%84/1%ec%9b%94/20200106_%eb%a7%88%ec%82%ac%ed%9a%8c+%ea%b3%a0+%eb%ac%b8%ec%a4%91%ec%9b%90+%ea%b8%b0%ec%88%98+%ec%a3%bd%ec%9d%8c%ec%9d%98+%ec%a7%84%ec%83%81%ea%b7%9c%eb%aa%85%ea%b3%bc+%ec%b1%85%ec%9e%84%ec%9e%90+%ec%b2%98%eb%b2%8c+%ec%9c%84%ed%95%9c+%ec%8b%9c%eb%af%bc%eb%8c%80%ec%b1%85%ec%9c%84%ec%9b%90%ed%9a%8c+%ec%b2%ad%ec%99%80%eb%8c%80+%ec%83%81%ec%97%ac+%ed%96%89%ec%a7%84/_CTU3676.jpg">
-            <div class="px-8 py-10 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
-              <h1 class="tracking-widest text-xl font-medium text-gray-100 pt-24 mb-3">Shooting Stars</h1>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <a href="/subjects">
-          <div class="flex relative">
-            <img class="absolute inset-0 w-full h-48 object-cover object-center" src="https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020%eb%85%84/1%ec%9b%94/20200106_%eb%a7%88%ec%82%ac%ed%9a%8c+%ea%b3%a0+%eb%ac%b8%ec%a4%91%ec%9b%90+%ea%b8%b0%ec%88%98+%ec%a3%bd%ec%9d%8c%ec%9d%98+%ec%a7%84%ec%83%81%ea%b7%9c%eb%aa%85%ea%b3%bc+%ec%b1%85%ec%9e%84%ec%9e%90+%ec%b2%98%eb%b2%8c+%ec%9c%84%ed%95%9c+%ec%8b%9c%eb%af%bc%eb%8c%80%ec%b1%85%ec%9c%84%ec%9b%90%ed%9a%8c+%ec%b2%ad%ec%99%80%eb%8c%80+%ec%83%81%ec%97%ac+%ed%96%89%ec%a7%84/_CTU3676.jpg">
-            <div class="px-8 py-10 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
-              <h1 class="tracking-widest text-xl font-medium text-gray-100 pt-24 mb-3">Shooting Stars</h1>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <a href="/subjects">
-          <div class="flex relative">
-            <img class="absolute inset-0 w-full h-48 object-cover object-center" src="https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020%eb%85%84/1%ec%9b%94/20200106_%eb%a7%88%ec%82%ac%ed%9a%8c+%ea%b3%a0+%eb%ac%b8%ec%a4%91%ec%9b%90+%ea%b8%b0%ec%88%98+%ec%a3%bd%ec%9d%8c%ec%9d%98+%ec%a7%84%ec%83%81%ea%b7%9c%eb%aa%85%ea%b3%bc+%ec%b1%85%ec%9e%84%ec%9e%90+%ec%b2%98%eb%b2%8c+%ec%9c%84%ed%95%9c+%ec%8b%9c%eb%af%bc%eb%8c%80%ec%b1%85%ec%9c%84%ec%9b%90%ed%9a%8c+%ec%b2%ad%ec%99%80%eb%8c%80+%ec%83%81%ec%97%ac+%ed%96%89%ec%a7%84/_CTU3676.jpg">
-            <div class="px-8 py-10 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
-              <h1 class="tracking-widest text-xl font-medium text-gray-100 pt-24 mb-3">Shooting Stars</h1>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <a href="/subjects">
-          <div class="flex relative">
-            <img class="absolute inset-0 w-full h-48 object-cover object-center" src="https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020%eb%85%84/1%ec%9b%94/20200106_%eb%a7%88%ec%82%ac%ed%9a%8c+%ea%b3%a0+%eb%ac%b8%ec%a4%91%ec%9b%90+%ea%b8%b0%ec%88%98+%ec%a3%bd%ec%9d%8c%ec%9d%98+%ec%a7%84%ec%83%81%ea%b7%9c%eb%aa%85%ea%b3%bc+%ec%b1%85%ec%9e%84%ec%9e%90+%ec%b2%98%eb%b2%8c+%ec%9c%84%ed%95%9c+%ec%8b%9c%eb%af%bc%eb%8c%80%ec%b1%85%ec%9c%84%ec%9b%90%ed%9a%8c+%ec%b2%ad%ec%99%80%eb%8c%80+%ec%83%81%ec%97%ac+%ed%96%89%ec%a7%84/_CTU3676.jpg">
-            <div class="px-8 py-10 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
-              <h1 class="tracking-widest text-xl font-medium text-gray-100 pt-24 mb-3">Shooting Stars</h1>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="xl:w-1/4 md:w-1/2 p-4">
-        <a href="/subjects">
-          <div class="flex relative">
-            <img class="absolute inset-0 w-full h-48 object-cover object-center" src="https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020%eb%85%84/1%ec%9b%94/20200106_%eb%a7%88%ec%82%ac%ed%9a%8c+%ea%b3%a0+%eb%ac%b8%ec%a4%91%ec%9b%90+%ea%b8%b0%ec%88%98+%ec%a3%bd%ec%9d%8c%ec%9d%98+%ec%a7%84%ec%83%81%ea%b7%9c%eb%aa%85%ea%b3%bc+%ec%b1%85%ec%9e%84%ec%9e%90+%ec%b2%98%eb%b2%8c+%ec%9c%84%ed%95%9c+%ec%8b%9c%eb%af%bc%eb%8c%80%ec%b1%85%ec%9c%84%ec%9b%90%ed%9a%8c+%ec%b2%ad%ec%99%80%eb%8c%80+%ec%83%81%ec%97%ac+%ed%96%89%ec%a7%84/_CTU3676.jpg">
-            <div class="px-8 py-10 relative z-10 w-full h-48 bg-gradient-to-t from-blue-600 bia-blue-50 to-white-100 opacity-0 hover:opacity-100">
-              <h1 class="tracking-widest text-xl font-medium text-gray-100 pt-24 mb-3">Shooting Stars</h1>
-            </div>
-          </div>
-        </a>
-      </div>                                    
+    {{ end }}
     </div>
   </div>  
-</section> 
+</section>

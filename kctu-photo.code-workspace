@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "project-root"
+    }
+  ],
+  "settings": {
+  },
+  "extensions": {
+    "recommendations": [
+      "editorconfig.editorconfig",
+      "budparr.language-hugo-vscode",
+      "yzhang.markdown-all-in-one",
+      "esbenp.prettier-vscode",
+      "eliostruyf.vscode-front-matter",
+      "eliostruyf.vscode-hugo-themer"
+    ]
+  }
+}

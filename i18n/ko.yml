@@ -1,0 +1,39 @@
+- id: title
+  translation:  
+    other: 제목
+- id: date
+  translation:
+    other: 날짜 
+- id: description
+  translation: 
+    other: 설명
+- id: modified_at
+  translation:
+    other: 수정일시
+- id: created_at
+  translation:
+    other: 생성일시
+- id: link
+  translation:
+    other: 링크
+- id: copyright_status
+  translation:
+    other: 저작권 사용가능
+- id: tags
+  translation:  
+    other: 태그 
+- id: creators
+  translation: 
+    other: 조직
+- id: subjects
+  translation: 
+    other: 주제
+- id: sources
+  translation: 
+    other: 
+- id: venues
+  translation:
+    other: 장소
+- id: events
+  translation:
+    other: 행사
