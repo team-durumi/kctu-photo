@@ -35,6 +35,7 @@ let searchQuery = getUrlParameter('q');
 
 if (searchQuery){
   document.getElementById("search-query").value = searchQuery;
+  document.getElementById("wait").classList.remove('hidden');
   executeSearch(searchQuery);
 } else {
   document.getElementById('search-results').innerHTML = "<p class=\"no-results\">Please enter a word or phrase above</p>";
@@ -42,20 +43,21 @@ if (searchQuery){
 
 function executeSearch(searchQuery) {
   // Look for "index.json" in the same directory where this script is called.
-  fetch("index.json").
-  then(function (response) {
-    return response.json()
-  }).
-  then(function (data) {
-    let fuse = new Fuse(data, fuseOptions);
-    let result = fuse.search(searchQuery);
-    if (result.length > 0) {
-      document.querySelector('#result-count').innerHTML = '<span class="p-2 rounded font-bold bg-green-500 text-white">' +result.length + '</span>';
-      populateResults(result);
-    } else {
-      document.getElementById('search-results').innerHTML = "<p class=\"no-results\">검색 결과가 없습니다.</p>";
-    }
-  });
+  fetch("index.json")
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+      let fuse = new Fuse(data, fuseOptions);
+      let result = fuse.search(searchQuery);
+      document.getElementById("wait").classList.add('hidden');
+      if (result.length > 0) {
+        document.querySelector('#result-count').innerHTML = '<span class="p-2 rounded font-bold bg-green-500 text-white">' +result.length + '</span>';
+        populateResults(result);
+      } else {
+        document.getElementById('search-results').innerHTML = "<p class=\"no-results\">검색 결과가 없습니다.</p>";
+      }
+    });
 }
 
 function populateResults(result){

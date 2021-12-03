@@ -6,8 +6,6 @@
 
 <div class="search" >
   <div class="px-24 md:px-64 py-12 relative mx-auto bg-blue-600 dark:bg-gray-900 text-gray-100">
-    <header>
-    </header>
     <form action="{{ .Permalink }}" class="mt-2 border-2 border-blue-600 dark:border-blue-00 bg-white h-14 rounded-lg text-gray-900 items-center focus:outline-none">
       <input class="ml-5 mt-1 w-1/2 md:w-2/3 py-1 rounded-lg text-2xl focus:outline-none" id="search-query" name="q"/>
       <button type="submit" class="p-3 float-right">
@@ -26,6 +24,10 @@
       <div class="px-4 py-4 mb-40 relative mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" id="search-results"></div>
     </div>
   </div>
+</div>
+
+<div id="wait" class="flex justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 items-center hidden">
+  <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
 </div>
 
 <template id="search-result-template" >
