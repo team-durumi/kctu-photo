@@ -38,7 +38,7 @@ if (searchQuery){
   document.getElementById("wait").classList.remove('hidden');
   executeSearch(searchQuery);
 } else {
-  document.getElementById('search-results').innerHTML = "<p class=\"no-results\">Please enter a word or phrase above</p>";
+  // document.getElementById('search-results').innerHTML = "<p class=\"no-results\">위에 검색어를 입력하세요</p>";
 }
 
 function executeSearch(searchQuery) {
