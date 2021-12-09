@@ -1,6 +1,0 @@
----
-lastmod: '2021-11-10'
-title: 건강보험고객센터 원주 농성장
-weight: 
-type: page
----
