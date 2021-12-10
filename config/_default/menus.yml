@@ -6,7 +6,7 @@ main:
     url: /items/
     weight: -100
   - name: 컬렉션
-    url: collection-list
+    url: 
     weight: -80
   - name: 주제별 컬렉션
     url: subjects
@@ -24,6 +24,10 @@ main:
     url: events
     weight: 4
     parent: 컬렉션
+  - name: 사건별 컬렉션
+    url: issues
+    weight: 5
+    parent: 컬렉션    
   - name: 오늘의사진
     url: /exhibitions/
     weight: -70
@@ -52,7 +56,7 @@ footer:
     weight: 2
     parent: 자료
   - name: 컬렉션
-    url: collection-list
+    url: 
     weight: -80
   - name: 주제별 컬렉션
     url: subjects
