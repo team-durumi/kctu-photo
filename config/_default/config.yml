@@ -19,3 +19,6 @@ taxonomies:
   subject: subjects
   creator: creators
   venue: venues
+  event: events
+  culture_worker: culture_workers
+  issue: issues
