@@ -5,7 +5,7 @@
       {{ if .Params.components }} 
         {{ range .Params.components }}
           {{ $fileExtension := index (last 1 (split . ".")) 0 }}
-          {{ if in "jpg jpeg png gif" $fileExtension}}
+          {{ if in site.Params.image_extension_whitelist $fileExtension}}
             {{ $src := partial "basic/cf-image.html" (dict "style" "thumb" "src" . "settings" $settings) }}
             <img class="h-40 rounded w-full object-cover object-center mb-6" src="{{ $src }}" alt="{{ $.Title }}">
           {{ else if in . "imagedelivery.net" }}
