@@ -11,59 +11,29 @@
         <p class="mt-2 text-sm text-gray-100">{{ .Site.Data.marketing.user.tagLine }}</p>
       </div>
       <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font text-xl text-gray-100 tracking-widest text-sm mb-3 hover:underline"><a href="/about">소개</a></h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a href="/posts" class="text-gray-300 hover:text-white">공지사항</a>
-            </li>
-             <li>
-              <a href="/" class="text-gray-300 hover:text-white">오늘의 사진</a>
-            </li>
-          </nav>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font text-xl text-gray-100 tracking-widest text-sm mb-3 hover:underline"><a href="/items">자료</a></h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a href="/items" class="text-gray-300 hover:text-white">탐색</a>
-            </li>
-            <li>
-              <a href="/search" class="text-gray-300 hover:text-white">검색</a>
-            </li>
-            <!-- <li>
-              <a href="/" class="text-gray-300 hover:text-white">리서치가이드</a>
-            </li> -->
-          </nav>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font text-xl text-gray-100 tracking-widest text-sm mb-3 hover:underline"><a href="/collection-list/" class="text-gray-300 hover:text-white">컬렉션</a></h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a href="/subjects" class="text-gray-300 hover:text-white">주제별 컬렉션</a>
-            </li>
-            <li>
-              <a href="/creators" class="text-gray-300 hover:text-white">조직별 컬렉션</a>
-            </li>
-            <li>
-            <a href="/venues" class="text-gray-300 hover:text-white">장소별 컬렉션</a>
-            </li>
-            <li>
-              <a href="/events" class="text-gray-300 hover:text-white">행사별 컬렉션</a>
-            </li>
-          </nav>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font text-xl text-gray-100 tracking-widest text-sm mb-3 hover:underline"><a href="/">운영 및 협력</a></h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a href="http://nodong.org/" class="text-gray-300 hover:text-white" target="_blank">민주노총 홈페이지</a>
-            </li>
-            <li>
-              <a href="http://worknworld.kctu.org/" class="text-gray-300 hover:text-white" target="_blank">노동과 세계</a>
-            </li>
-          </nav>
-        </div>
+        {{ range site.Menus.footer }}
+          {{ if .HasChildren }}
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font text-xl text-gray-100 tracking-widest text-sm mb-3 hover:underline"><a href="{{ .URL | absURL }}">{{ .Name }}</a></h2>
+              <nav class="list-none mb-10">
+                {{ range .Children }}
+                  <li>
+                    <a href="{{ .URL | absURL }}" class="text-gray-300 hover:text-white">{{ .Name }}</a>
+                  </li>
+                {{ end }}
+              </nav>
+            </div>
+          {{ else }}
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font text-xl text-gray-100 tracking-widest text-sm mb-3 hover:underline"><a href="{{ .URL | absURL }}">{{ .Name }}</a></h2>
+              <nav class="list-none mb-10">
+                  <li>
+                    <a href="{{ .URL | absURL }}" class="text-gray-300 hover:text-white"></a>
+                  </li>
+              </nav>
+            </div>
+          {{ end }}
+        {{ end }}
       </div>
     </div>
     <div class="bg-gray-800">

@@ -73,7 +73,11 @@ footer:
   - name: 행사별 컬렉션
     url: events
     weight: 4
-    parent: 컬렉션 
+    parent: 컬렉션
+  - name: 사건별 컬렉션
+    url: issues
+    weight: 5
+    parent: 컬렉션     
   - name: 운영 및 협력
     url: 
     weight: -70
