@@ -7,3 +7,10 @@ cfImagePrefix: 'https://kctu-photo.durumi.io/cdn-cgi/image'
 cfImageStyles:
   thumb: 'fit=scale-down,width=300'
   full: 'fit=scale-down,width=1920'
+
+image_extension_whitelist:
+  - jpg
+  - jpeg
+  - png
+  - gif
+  - JPG
