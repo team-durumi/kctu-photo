@@ -37,3 +37,6 @@
 - id: events
   translation:
     other: 행사
+- id: issues
+  translation:
+    other: 사건
