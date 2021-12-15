@@ -28,9 +28,8 @@
             <button class="px-4 py-1 text-gray-600 font-medium">모두해제</button>
           </div> -->
           <div class="mb-2">
-            <br>
             {{ $itemsSection := .Site.GetPage "section" "items" }}
-            <div class="mb-3">
+            <div class="mt-5 mb-3">
               {{ with .Site.GetPage "items"}}
                 <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if eq $.Path (lower .Title) }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">전체</a>
               {{ end }}
