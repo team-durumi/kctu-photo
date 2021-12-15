@@ -17,7 +17,7 @@
             {{ if .Params.components}}
               {{ range .Params.components }}
                 {{ $fileExtension := index (last 1 (split . ".")) 0 }}
-                {{ if in "jpg jpeg png gif" $fileExtension }}
+                {{ if in site.Params.image_extension_whitelist $fileExtension }}
                   {{ $src := partial "basic/cf-image.html" (dict "style" "thumb" "src" . "settings" $settings) }}
                   <img class="absolute inset-0 w-full h-48 object-cover object-center" src="{{ $src }}" alt="{{ $.Title }}">
                 {{ end }}
