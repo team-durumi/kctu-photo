@@ -1,6 +1,6 @@
 <!-- header에 로고가 포함되어 있는 경우 -->
 <header class="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-900 body-font">
-  <div x-data="{ open: false }" class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
+  <div x-data="{ open: false }" class="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
     <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 ">
       <!-- <img class="object-cover object-center w-10 h-10" alt="logo" src="{{ .Site.Data.marketing.user.logo  | absURL }}"> -->
       <svg width="200" height="37" viewBox="0 0 302 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,8 +16,8 @@
               <span>{{ .Name }}</span>
               <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </button>
-            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-36">
-              <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-30">
+              <div class="grid justify-items-center px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
                 {{ range .Children }}
                   <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-blue-600 hover:bg-gray-200" href="{{ .URL | absURL }}">{{ .Name }}</a>
                 {{ end }}
@@ -31,15 +31,14 @@
     </nav>
     <ul class="lnb mt-4 sm:mt-1">
       <li class="search inline-block">
-        <a class="block px-4 py-1 bg-white border-blue-600 dark:bg-black dark:border-blue-500 border box-border rounded-lg text-sm text-blue-600 dark:text-blue-500 strong" href="/search">
-          검색
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+        <a class="block px-4 py-1 bg-white border-blue-600 dark:bg-black dark:border-blue-500 border box-border rounded-lg text-sm text-blue-600 dark:text-blue-500" href="http://nodong.org/" target="_blank">
+          민주노총
         </a>
       </li>
       <li class="login inline-block">
-        <a class="block px-4 py-1 bg-blue-600 border-blue-600 dark:bg-blue-500 dark:border-blue-500 border box-border rounded-lg text-sm text-gray-100 dark:bg-gray-900" href="{{ .Site.Data.marketing.user.footer.url }}" target="_blank">{{ .Site.Data.marketing.user.footer.caption }}</a>
+        <a class="block px-4 py-1 bg-blue-600 border-blue-600 dark:bg-blue-500 dark:border-blue-500 border box-border rounded-lg text-sm text-gray-100 dark:bg-gray-900" href="https://worknworld.kctu.org" target="_blank">
+          노동과세계
+        </a>
       </li>
     </ul>
   </div>
