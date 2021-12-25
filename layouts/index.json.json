@@ -1,0 +1,20 @@
+{{- $settings := .Site.Params -}}
+{{- $.Scratch.Add "index" slice -}}
+{{ $items := .Site.GetPage "section" "items" }}
+{{ $randoms := $items.RegularPagesRecursive | shuffle | first 60 }}
+{{- range $randoms -}}
+  {{- $data := dict
+    "title" .Title
+    "permalink" .Permalink
+  -}}
+  {{- with .Params.components -}}
+    {{- $image := partial "basic/cf-image.html" (dict
+      "style" "thumb"
+      "src" (index . 0)
+      "settings" $settings
+    ) -}}
+    {{ $data = merge $data (dict "image" $image) }}
+  {{- end -}}
+  {{- $.Scratch.Add "index" $data -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

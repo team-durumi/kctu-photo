@@ -22,3 +22,8 @@ taxonomies:
   event: events
   culture_worker: culture_workers
   issue: issues
+
+outputs:
+  home:
+  - html
+  - json
