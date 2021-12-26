@@ -9,7 +9,6 @@
   </section>
 
   <div class="w-full h-full block bg-gray-200 dark:bg-gray-600 pt-10 pb-20">
-    <!-- {{ partial "app/browse-breadcrumb.html" . }} -->
     <div class="px-10">
       <section class="">
         <div class="pb-3 border-b-2 border-gray-300">
@@ -23,24 +22,22 @@
 
         <div class="pb-3 border-b-2 border-gray-300">
           <!-- <div class="my-3">
-            <button class="px-4 py-1 text-gray-600 font-medium">모두선택</button>
-            |
+            <button class="px-4 py-1 text-gray-600 font-medium">모두선택</button>|
             <button class="px-4 py-1 text-gray-600 font-medium">모두해제</button>
           </div> -->
           <div class="mb-2">
             {{ $itemsSection := .Site.GetPage "section" "items" }}
             <div class="mt-5 mb-3">
               {{ with .Site.GetPage "items"}}
-                <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if eq $.Path (lower .Title) }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">전체</a>
+                <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 my-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if eq $.Path (lower .Title) }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">전체</a>
               {{ end }}
-              {{ range $itemsSection.Sections }}
-                <span class="text-gray-500">|</span>
+              {{ range $itemsSection.Sections }}<br>
                 {{ $currentURI := split $.Path "/" }}
                 {{ $secondSectionBool := in $currentURI (lower .Title) }}
-                <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if $secondSectionBool }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">{{ .Title }}</a>
-                {{ range .Sections }}
-                  <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if and ( $secondSectionBool ) (in $currentURI (lower .Title)) }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">{{ .Title }}</a>
-                {{ end }}
+                <a href="{{.Permalink}}" class="inline-block w-max px-2 py-1 my-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if $secondSectionBool }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">{{ .Title }}</a>
+                <div class="month-container inline-block">{{ range .Sections }}
+                  <a href="{{.Permalink}}" data-month="{{ delimit (findRE "[0-9]+" .Path 2) "" }}" class="inline-block w-max px-2 py-1 m-1 hover:bg-white dark:bg-black border-2 border-gray-400 hover:border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-gray-500 hover:text-blue-600 dark:text-blue-500 strong {{ if and ( $secondSectionBool ) (in $currentURI (lower .Title)) }} bg-white text-blue-600 border-blue-600 font-semibold {{ end }}">{{ .Title }}</a>
+                {{ end }}</div>
               {{ end }}
             </div>
           </div>
@@ -49,4 +46,17 @@
       {{ partial "app/item-list-sections.html" . }}
     </div>
   </div>
+<script>
+const sort = () => {
+  document.querySelectorAll('.month-container').forEach(c => {
+    let months = Array.from(c.querySelectorAll('[data-month]'));
+    let sorted = months.sort((a, b) => {
+      if (a.dataset.month * 1 < b.dataset.month * 1) return -1;
+      if (a.dataset.month * 1 > b.dataset.month * 1) return 1;
+      return 0;
+    }).forEach(e => c.appendChild(e));
+  })
+}
+document.addEventListener('DOMContentLoaded', sort());
+</script>
 {{ end }}
