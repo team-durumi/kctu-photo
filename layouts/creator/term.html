@@ -20,35 +20,37 @@
     <div class="-my-8 divide-y-2 divide-gray-100">
       {{ $paginator := .Paginate ( .Pages.ByDate ) 10 }}
       {{ range $paginator.Pages  }}
-        <div class="py-8 flex flex-wrap md:flex-nowrap">
-          <div class="md:w-64 w-full md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-            {{ $path := .Path}}
-            {{ if .Params.components }}
-              {{ range .Params.components }}
-                {{ $fileExtension := index (last 1 (split . ".")) 0 }}
-                {{ if in site.Params.image_extension_whitelist $fileExtension}}
-                  <img alt="gallery" class="rounded" src="{{ . | absURL }}" alt="item object"> <!-- src="/cdn-cgi/image/fit=scale-down,width=300/{{ .| absURL }}" -->
-                {{ else }}
-                  {{ partial "app/item-list-sections-dummy-thumbnail.html" $path }}
+        <a href="{{ .RelPermalink }}">
+          <div class="py-8 flex flex-wrap md:flex-nowrap">
+            <div class="md:w-64 w-full md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              {{ $path := .Path}}
+              {{ if .Params.components }}
+                {{ range .Params.components }}
+                  {{ $fileExtension := index (last 1 (split . ".")) 0 }}
+                  {{ if in site.Params.image_extension_whitelist $fileExtension}}
+                    <img alt="gallery" class="rounded" src="{{ . | absURL }}" alt="item object"> <!-- src="/cdn-cgi/image/fit=scale-down,width=300/{{ .| absURL }}" -->
+                  {{ else }}
+                    {{ partial "app/item-list-sections-dummy-thumbnail.html" $path }}
+                  {{ end }}
                 {{ end }}
+              {{ else }}
+                {{ partial "app/item-list-sections-dummy-thumbnail.html" $path }}
               {{ end }}
-            {{ else }}
-              {{ partial "app/item-list-sections-dummy-thumbnail.html" $path }}
-            {{ end }}
+            </div>
+            <div class="md:flex-grow ml-6">
+              {{ if .Date }}<h2 class="tracking-widest text-sm title-font font-medium text-blue-600 dark:text-blue-500 mb-1">{{ dateFormat "2006, January 2" .Date }}</h2>{{ end }}
+              <h2 class="text-2xl text-blue-600 dark:text-blue-500 mb-2">{{ .Title }}</h2>
+              {{ if .Params.description }}<p class="leading-relaxed ext-gray-800 dark:text-gray-300">{{ .Params.description }}</p>{{ end }}
+              <!-- <p class="leading-relaxed text-gray-800 dark:text-gray-500">{{ .Params.media_type }} | {{ .Params.time_courts}} | {{ .Params.local_identifier }}</p> -->
+              <a href="{{ .RelPermalink }}" class="text-blue-500 inline-flex items-center mt-4">아이템 보기
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
-          <div class="md:flex-grow ml-6">
-            {{ if .Date }}<h2 class="tracking-widest text-sm title-font font-medium text-blue-600 dark:text-blue-500 mb-1">{{ dateFormat "2006, January 2" .Date }}</h2>{{ end }}
-            <h2 class="text-2xl text-blue-600 dark:text-blue-500 mb-2">{{ .Title }}</h2>
-            {{ if .Params.description }}<p class="leading-relaxed ext-gray-800 dark:text-gray-300">{{ .Params.description }}</p>{{ end }}
-            <!-- <p class="leading-relaxed text-gray-800 dark:text-gray-500">{{ .Params.media_type }} | {{ .Params.time_courts}} | {{ .Params.local_identifier }}</p> -->
-            <a href="{{ .Permalink }}" class="text-blue-500 inline-flex items-center mt-4">아이템 보기
-              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
+        </a>
       {{ end }}
     </div>
     <div class="paginator">
