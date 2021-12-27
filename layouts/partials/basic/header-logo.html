@@ -1,7 +1,8 @@
 <header class="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-900 body-font">
   <div x-data="{ open: false }" class="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
     <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 ">
-      <span class="ml-3 text-xl">{{ .Site.Title }}</span>
+      <img class="object-cover object-center h-6" alt="logo" src="/img/logo.svg">
+      <!-- <span class="ml-3 text-xl">{{ .Site.Title }}</span> -->
     </a>
     <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-items-start">
       {{ range site.Menus.main }}
