@@ -21,12 +21,12 @@
       {{ $paginator := .Paginate ( .Pages.ByDate ) 10 }}
       {{ range $paginator.Pages  }}
         <div class="py-8 flex flex-wrap md:flex-nowrap">
-          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+          <div class="md:w-64 w-full md:mb-0 mb-6 flex-shrink-0 flex flex-col">
             {{ $path := .Path}}
-            {{ if .Params.components }} 
+            {{ if .Params.components }}
               {{ range .Params.components }}
                 {{ $fileExtension := index (last 1 (split . ".")) 0 }}
-                {{ if in "jpg jpeg png gif" $fileExtension}}
+                {{ if in site.Params.image_extension_whitelist $fileExtension}}
                   <img alt="gallery" class="rounded" src="{{ . | absURL }}" alt="item object"> <!-- src="/cdn-cgi/image/fit=scale-down,width=300/{{ .| absURL }}" -->
                 {{ else }}
                   {{ partial "app/item-list-sections-dummy-thumbnail.html" $path }}
