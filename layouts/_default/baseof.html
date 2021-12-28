@@ -2,20 +2,20 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <title>
-      {{ .Site.Title }}
-      {{ .Site.Params.description }}
-    </title>
-    <meta name="description" content="{{ .Description }}">
-    {{/* styles */}}
-    {{ $options := dict "inlineImports" true }}
-    {{ $styles := resources.Get "css/styles.css" }}
-    {{ $styles = $styles | resources.PostCSS $options }}
-    {{ if  hugo.IsProduction  }}
+    <title>{{ block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}<meta name="robots" content="index, follow" />{{ else }}<meta name="robots" content="noindex, nofollow" />{{ end -}}
+    {{- template "_internal/google_analytics.html" . -}}
+    {{- template "_internal/opengraph.html" . -}}
+    {{- template "_internal/twitter_cards.html" . -}}
+    {{- template "_internal/schema.html" . -}}
+    {{- $styles := resources.Get "css/styles.css" -}}
+    {{- $styles = $styles | resources.PostCSS (dict "inlineImports" true) -}}
+    {{- if  hugo.IsProduction  }}
       {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
-    {{ end }}
+    {{ end -}}
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
@@ -24,10 +24,7 @@
       {{ block "main" . }}{{ end }}
     </div>
   </body>
-  {{ block "footer" . }}
-    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-  {{ end }}
-  {{ partial "basic/footer-wide.html" . }}
+  {{ block "footer" . }}{{ partial "basic/footer-wide.html" . }}{{ end }}
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" defer></script>
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer ></script>
 </html>

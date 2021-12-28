@@ -1,10 +1,4 @@
 {{/* https://discourse.gohugo.io/t/cloudflareimageresize-and-development-preview/35288 */}}
-{{ $cfImageUrl := "" }}
-{{ $cfImagePrefix := .settings.cfImagePrefix }}
-{{ $image_style := index .settings.cfImageStyles .style }}
-{{ if eq hugo.IsProduction true }} 
-    {{  $cfImageUrl = printf "/cdn-cgi/image/%s/%s" $image_style .src }}
-{{else}} 
-    {{  $cfImageUrl = printf "%s/%s/%s" $cfImagePrefix $image_style .src }} 
-{{ end }}
-{{ return $cfImageUrl }}
+{{- $cfImageUrl := "" -}}{{- $cfImagePrefix := .settings.cfImagePrefix -}}
+{{- $image_style := index .settings.cfImageStyles .style -}}
+{{-  $cfImageUrl = printf "%s/%s/%s" $cfImagePrefix $image_style .src -}}{{ return $cfImageUrl }}
