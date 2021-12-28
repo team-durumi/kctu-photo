@@ -8,6 +8,7 @@ cfImageStyles:
   thumb: 'fit=scale-down,width=300'
   full: 'fit=scale-down,width=1920'
   frontSlide: 'fit=cover,width=1920,height=1280'
+  thumb2by3: 'fit=cover,width=300,height=200'
 
 image_extension_whitelist:
   - jpg
