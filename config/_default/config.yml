@@ -26,4 +26,6 @@ taxonomies:
 outputs:
   home:
   - html
+  page:
+  - html
   - json

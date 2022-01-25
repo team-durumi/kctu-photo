@@ -13,7 +13,6 @@
       "budparr.language-hugo-vscode",
       "yzhang.markdown-all-in-one",
       "esbenp.prettier-vscode",
-      "eliostruyf.vscode-front-matter",
       "eliostruyf.vscode-hugo-themer"
     ]
   }

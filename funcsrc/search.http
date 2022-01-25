@@ -1,0 +1,12 @@
+# https://61ee5da2c5ec59629e82949a--kctu-photo-dev.netlify.app/
+#1 https://61ee5da2c5ec59629e82949a--kctu-photo-dev.netlify.app/.netlify/functions/site-search
+#2 https://61ef7428c7407f713137e96d--kctu-photo-dev.netlify.app/.netlify/functions/site-search
+#3 https://61ef8be62c7b228bb814027a--kctu-photo-dev.netlify.app/.netlify/functions/site-search
+POST https://61ef8be62c7b228bb814027a--kctu-photo-dev.netlify.app/.netlify/functions/site-search HTTP/1.1
+content-type: application/json
+
+{
+  "query": "민주노총",
+  "filters": [],
+  "page": 1
+}

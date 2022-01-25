@@ -8,6 +8,12 @@ hugo_stats.json
 drive
 s3
 nas
-/.frontmatter
-/frontmatter.json
-/content/frontmatter.json
+
+# bluge/
+/bluge_index_dir/bluge_index_dir
+/bluge_add_to_elf
+/site_index.bluge
+/functions/site-search
+
+# Local Netlify folder
+.netlify

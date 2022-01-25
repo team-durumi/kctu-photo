@@ -1,0 +1,820 @@
+{
+  "query": "민주노총",
+  "total": 3964,
+  "top_score": 5.6607283955299135,
+  "hits": [
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4808/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4818/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4823/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4826/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4831/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4835/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4837/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4843/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4852/"
+    },
+    {
+      "document": {
+        "title": "20210315-거침없는 민주노총! 110만의 총파업 2021년 민주노총 투쟁선포 기자회견",
+        "content": "",
+        "type": "items"
+      },
+      "score": 5.6607283955299135,
+      "explanation": {
+        "value": 5.6607283955299135,
+        "message": "sum of:",
+        "children": [
+          {
+            "value": 5.6607283955299135,
+            "message": "sum of:",
+            "children": [
+              {
+                "value": 5.6607283955299135,
+                "message": "sum of:",
+                "children": [
+                  {
+                    "value": 5.6607283955299135,
+                    "message": "sum of:",
+                    "children": [
+                      {
+                        "value": 5.6607283955299135,
+                        "message": "score(freq=2), computed as boost * idf * tf from:",
+                        "children": [
+                          {
+                            "value": 9.189218888235217,
+                            "message": "idf, computed as log(1 + (N - n + 0.5) / (n + 0.5)) from:",
+                            "children": [
+                              {
+                                "value": 3964,
+                                "message": "n, number of documents containing term"
+                              },
+                              {
+                                "value": 13754,
+                                "message": "N, total number of documents with field"
+                              }
+                            ]
+                          },
+                          {
+                            "value": 0.6160184520990393,
+                            "message": "tf, computed as freq / (freq + k1 * (1 - b + b * dl / avgdl)) from:",
+                            "children": [
+                              {
+                                "value": 2,
+                                "message": "freq, occurrences of term within document"
+                              },
+                              {
+                                "value": 1.2,
+                                "message": "k1, term saturation parameter"
+                              },
+                              {
+                                "value": 0.75,
+                                "message": "b, length normalization parameter"
+                              },
+                              {
+                                "value": 15,
+                                "message": "dl, length of field"
+                              },
+                              {
+                                "value": 14.26072415297368,
+                                "message": "avgdl, average length of field"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "https://kctu-photo.durumi.io/items/2021%EB%85%84/3%EC%9B%94/20210315-%EA%B1%B0%EC%B9%A8%EC%97%86%EB%8A%94-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-110%EB%A7%8C%EC%9D%98-%EC%B4%9D%ED%8C%8C%EC%97%85-2021%EB%85%84-%EB%AF%BC%EC%A3%BC%EB%85%B8%EC%B4%9D-%ED%88%AC%EC%9F%81%EC%84%A0%ED%8F%AC-%EA%B8%B0%EC%9E%90%ED%9A%8C%EA%B2%AC/_1dx4857/"
+    }
+  ],
+  "duration": "10.160018ms",
+  "aggregations": {
+    "type": {
+      "display_name": "Type",
+      "filter_name": "type",
+      "values": [
+        {
+          "display_name": "items",
+          "filter_name": "items",
+          "count": 3963,
+          "filtered": false
+        },
+        {
+          "display_name": "posts",
+          "filter_name": "posts",
+          "count": 1,
+          "filtered": false
+        }
+      ]
+    }
+  },
+  "message": "3964 results",
+  "nextPage": 2
+}

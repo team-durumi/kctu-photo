@@ -1,0 +1,21 @@
+{{- $settings := .Site.Params -}}
+{{- $data := dict
+  "title" .Title
+  "date" .Date
+  "type" .Type
+  "permalink" .Permalink
+  "tags" .Params.tags
+  "subjects" .Params.subjects
+  "creators" .Params.creators
+  "venues" .Params.venues
+  "sources" .Params.sources
+-}}
+{{- with .Params.components -}}
+  {{- $image := partial "basic/cf-image.html" (dict
+    "style" "thumb"
+    "src" (index . 0)
+    "settings" $settings
+  ) -}}
+  {{ $data = merge $data (dict "image" $image) }}
+{{- end -}}
+{{- $data | jsonify -}}
