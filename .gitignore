@@ -11,3 +11,6 @@ nas
 /.frontmatter
 /frontmatter.json
 /content/frontmatter.json
+
+# Local Netlify folder
+.netlify

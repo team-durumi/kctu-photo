@@ -1,0 +1,8 @@
+[functions]
+node_bundler = "esbuild"
+
+[dev]
+  command = 'hugo serve -D'
+  functionsPort = 8889
+  port = 8888
+  targetPort = 1313
