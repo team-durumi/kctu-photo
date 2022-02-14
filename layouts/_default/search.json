@@ -2,6 +2,7 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range site.RegularPages -}}
   {{- $data := dict
+    "id" .File.UniqueID
     "title" .Title
     "contents" .Plain
     "permalink" .Permalink

@@ -16,3 +16,12 @@ image_extension_whitelist:
   - png
   - gif
   - JPG
+
+vocabularies:
+  tags: '태그'
+  subjects: '주제'
+  creators: '조직'
+  venues: '장소'
+  events: '행사'
+  culture_workers: ''
+  issues: '사건'
