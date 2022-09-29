@@ -3,6 +3,7 @@ description: 노동과세계에 보도된 사진을 중심으로 민주노총 26
 images:
   - /img/default.png
 
+bucketHostname: 'https://kctu-photo-r2.team5809.workers.dev'
 cfImagePrefix: 'https://kctu-photo.durumi.io/cdn-cgi/image'
 cfImageStyles:
   thumb: 'fit=scale-down,width=300'

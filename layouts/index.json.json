@@ -8,9 +8,10 @@
     "permalink" .Permalink
   -}}
   {{- with .Params.components -}}
+    {{- $whole_url := printf "%s/%s" site.Params.bucketHostname (index . 0) -}}
     {{- $image := partial "basic/cf-image.html" (dict
       "style" "thumb"
-      "src" (index . 0)
+      "src" $whole_url
       "settings" $settings
     ) -}}
     {{ $data = merge $data (dict "image" $image) }}

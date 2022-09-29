@@ -28,7 +28,9 @@
                 {{ range .Params.components }}
                   {{ $fileExtension := index (last 1 (split . ".")) 0 }}
                   {{ if in site.Params.image_extension_whitelist $fileExtension}}
-                    <img alt="gallery" class="rounded" src="{{ . | absURL }}" alt="item object"> <!-- src="/cdn-cgi/image/fit=scale-down,width=300/{{ .| absURL }}" -->
+                    {{ $whole_url := printf "%s/%s" site.Params.bucketHostname . }}
+                    {{ $src := partial "basic/cf-image.html" (dict "style" "thumb" "src" $whole_url "settings" site.Params ) }}
+                    <img alt="gallery" class="rounded" src="{{ $src }}" alt="item object">
                   {{ else }}
                     {{ partial "app/item-list-sections-dummy-thumbnail.html" $path }}
                   {{ end }}
