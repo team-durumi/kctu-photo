@@ -13,7 +13,7 @@ link:
 public_access_status: 
 copyright_status: 
 components:
-- https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020년/2월/20200212-영남대의료원+고공농성+해단집회/_박문진w보건_노동과세계_지산하(보건).JPG
+- "/2020년/2월/20200212-영남대의료원 고공농성 해단집회/_박문진w보건_노동과세계_지산하(보건).JPG"
 tags:
 - 
 creators:

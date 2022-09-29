@@ -13,7 +13,7 @@ link:
 public_access_status: 
 copyright_status: 
 components:
-- https://kctu-photo.s3.ap-northeast-2.amazonaws.com/2020년/9월/20200908-비전향+장기수+송환+20년,+추석+전+2차+송환+촉구+기자회견/edit_PIG3159.jpg
+- "/2020년/9월/20200908-비전향 장기수 송환 20년, 추석 전 2차 송환 촉구 기자회견/edit_PIG3159.jpg"
 tags:
 - 
 creators:
