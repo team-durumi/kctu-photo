@@ -4,7 +4,13 @@
     <div class="flex flex-wrap -mx-2 my-4">
       <!-- {{ .TableOfContents }} -->
       {{ range $paginator.Pages }}
-        {{ partial "app/item-card.html" .}}
+        {{ $path := .Path}}{{ $settings := .Site.Params }}
+        {{ $singlePath := .Permalink }}{{ $singleTitle := .Title }}{{ $singleDate := .Params.date}}
+        {{ if .Params.components }}
+          {{ range .Params.components }}
+            {{ partial "app/item-card.html" (dict "imagePath" . "cardLink" $singlePath "cardTitle" $singleTitle "cardSubtitle" $singleDate "settings" $settings )}}
+          {{ end }}
+        {{ end }}
       {{ end }}
     </div>
     <div class="paginator">
@@ -17,4 +23,4 @@
       </div>
     </div>
   {{ end }}
-</section> 
+</section>
