@@ -5,7 +5,7 @@ main:
   - name: 전체사진 보기
     url: /items/
     weight: -100
-  - name: 사진 컬렉션  
+  - name: 사진 컬렉션
     url: 
     weight: -90
   - name: 주제 분류
@@ -55,7 +55,7 @@ footer:
     url: search
     weight: 2
     parent: 자료
-  - name: 사진 컬렉션  
+  - name: 사진 컬렉션
     url: 
     weight: -80
   - name: 주제 분류
@@ -77,15 +77,15 @@ footer:
   - name: 사건 분류
     url: issues
     weight: 5
-    parent: 사진 컬렉션  
+    parent: 사진 컬렉션
   - name: 운영 및 협력
     url: 
     weight: -70
   - name: 민주노총
     url: https://nodong.org
     weight: 1
-    parent: 운영 및 협력 
+    parent: 운영 및 협력
   - name: 노동과세계
     url: http://worknworld.kctu.org
     weight: 2
-    parent: 운영 및 협력                           
+    parent: 운영 및 협력

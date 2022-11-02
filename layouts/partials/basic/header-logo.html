@@ -1,16 +1,16 @@
-<header class="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-900 body-font">
-  <div x-data="{ open: false }" class="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
-    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 ">
+<header class="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-900 body-font sticky top-0 md:relative">
+  <div x-data="{ open: false }" class="mx-auto flex flex-wrap p-5 md:flex-col flex-row items-center ">
+    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-0 md:mb-3">
       <img class="object-cover object-center h-6" alt="logo" src="/img/kctu_logo.png">
       <span class="ml-2 text-2xl font-semibold">아카이브</span>
     </a>
-    <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-items-start">
+    <nav class="mx-auto flex flex-wrap items-center text-base justify-items-stretch">
       {{ range site.Menus.main }}
         {{ if .HasChildren }}
           <div @click.away="open = false" class="relative" x-data="{ open: false }">
-            <button @click="open = !open" class="mr-7 hover:border-b-2 hover:border-blue-600 hover:text-blue-600">
+            <button @click="open = !open" class="mx-5 hover:border-b-2 hover:border-blue-600 hover:text-blue-600">
               <span>{{ .Name }}</span>
-              <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 md:-mt-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </button>
             <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-30">
               <div class="grid justify-items-center px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
@@ -21,11 +21,11 @@
             </div>
           </div>
         {{ else }}
-          <a class="mr-7 hover:border-b-2 hover:border-blue-600 hover:text-blue-600" href="{{ .URL | absURL }}">{{ .Name }}</a>
+          <a class="mx-5 hover:border-b-2 hover:border-blue-600 hover:text-blue-600" href="{{ .URL | absURL }}">{{ .Name }}</a>
         {{ end }}
       {{ end }}
     </nav>
-    <ul class="lnb mt-4 sm:mt-1">
+    <ul class="md:mt-4">
       <li class="search inline-block">
         <a class="block px-4 py-1 bg-white border-blue-600 dark:bg-black dark:border-blue-500 border box-border rounded-lg text-sm text-blue-600 dark:text-blue-500" href="http://nodong.org/" target="_blank">
           민주노총
