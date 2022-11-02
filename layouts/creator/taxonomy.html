@@ -3,21 +3,21 @@
 {{ end }}
 {{ define "main" }}
 <section class="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-900 body-font">
-  <div class="px-5 pt-24 pb-8 mx-auto">
+  <div class="px-5 pt-24 md:pt-12 pb-8 mx-auto">
     <div class="flex flex-col text-center w-full">
-      <h1 class="sm:text-3xl text-4xl font-medium title-font mb-4 text-gray-900 dark:text-gray-100">{{ i18n .Type }}</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base mb-8">{{ .Params.Description }}</p>
+      <h1 class="text-4xl md:text-xl font-medium title-font mb-4 text-gray-900 dark:text-gray-100">{{ i18n .Type }}</h1>
+      <p class="w-full mx-auto leading-relaxed text-lg md:text-xs mb-8">{{ .Params.Description }}</p>
     </div>
   </div>
 </section>
 <section class="text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-800 body-font">
-  <div class="container px-5 py-24 mx-auto">
+  <div class="container p-5 mx-auto">
     <div id="term-container" class="flex flex-wrap -m-4">
       {{ $type := .Type }}
       {{ range .Data.Terms.ByCount }}
         {{ $name := .Name }}{{ $count := .Count }}
         {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-        <div class="term lg:w-1/4 sm:w-1/2 p-2" data-name="{{ .Title }}">
+        <div class="term w-1/5 lg:w-1/4 md:w-1/2 sm:w-full p-2" data-name="{{ .Title }}">
           <div class="flex relative">
             <div class="p-4 rounded relative z-10 w-full border-4 border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-900">
               <div>
