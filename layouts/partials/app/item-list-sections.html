@@ -4,8 +4,8 @@
     <div class="flex flex-wrap -mx-2 my-4">
       <!-- {{ .TableOfContents }} -->
       {{ range $paginator.Pages }}
-        {{ $path := .Path}}{{ $settings := .Site.Params }}
-        {{ $singlePath := .Permalink }}{{ $singleTitle := .Title }}{{ $singleDate := .Params.date}}
+        {{ $settings := .Site.Params }}
+        {{ $singlePath := .Permalink }}{{ $singleTitle := .Title }}{{ $singleDate := .Params.date }}
         {{ if .Params.components }}
           {{ range .Params.components }}
             {{ partial "app/item-card.html" (dict "imagePath" . "cardLink" $singlePath "cardTitle" $singleTitle "cardSubtitle" $singleDate "settings" $settings )}}

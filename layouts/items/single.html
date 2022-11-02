@@ -8,37 +8,37 @@
   <!-- IDENTITY STATEMENT AREA | Summary Sections -->
   <div class="px-5 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden sm:rounded-lg">
     <!-- <div class="px-5 py-5 sm:px-6"> -->
-    <div class="flex flex-wrap -mb-4 md:mb-0">
-      <div class="w-full 2xl:w-3/4 xl:w-3/4">
+    <div class="flex flex-wrap mb-5">
+      <div class="w-3/4 md:w-full">
         <!-- Youtube / Vimeo -->
-        {{ if .Params.link }}	
+        {{ if .Params.link }}
           <iframe class="rounded w-full h-96 aspect-w-4 aspect-h-3" src="{{ .Params.link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           {{ .Params.shotlist }}
         {{ else }}
           <!-- item IMG / PDF / Youtube -->
           <div class="w-full">
             {{ if .Params.components }}{{ $settings := .Site.Params }}
+              {{ $componentPaths := slice }}
               {{ range .Params.Components }}
               {{ $extension := index (last 1 (split  . "." )) 0 }}
                 {{ if in site.Params.image_extension_whitelist $extension}}
                   {{ $whole_url := printf "%s/%s" site.Params.bucketHostname . }}
                   {{ $src := partial "basic/cf-image.html" (dict "style" "full" "src" $whole_url "settings" $settings) }}
-                  <img class="h-full rounded w-full object-cover object-center mb-6" src="{{ $src }}" alt="item object">
-                {{ else }} 
-                  <embed src="{{ . }}" width="100%;" height="800px;" alt="item object">
+                  {{ $componentPaths = append $src $componentPaths }}
                 {{ end }}
               {{ end }}
+              {{ partial "app/photo-gallery.html" $componentPaths }}
             {{ else }}
               <strong> 자료가 없습니다. </strong>
             {{ end }}
           </div>
-        {{ end }}  
+        {{ end }}
       </div>
-      <div class="w-full 2xl:w-1/4 xl:w-1/4">
+      <div class="w-1/4 md:w-full">
         <div class="pl-5">
           {{ $.Scratch.Set "eligibleKeys" (slice "title" "description" "events" "subjects" "creators" "venues" "tags") }}
           {{ range $.Scratch.Get "eligibleKeys"}}
-            {{ $key := . }}	{{ $value := $.Param . }}
+            {{ $key := . }}{{ $value := $.Param . }}
             {{ if $value }}
               {{ $.Scratch.Set "sliceKeys" (slice "subjects" "creators" "events" "venues" "tags") }}
               {{ $.Scratch.Set "emptySlice" (slice "")}}
@@ -76,16 +76,6 @@
           {{ end }}
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="p-5 mt-10">
-    <h5 class="font-semibold text-lg">관련자료</h5>
-    <div class="flex flex-wrap -mx-2 my-4">
-      {{ $relatives := .Parent.RegularPagesRecursive | shuffle | first 12 }}
-      {{ range $relatives}}
-        {{ partial "app/item-card.html" . }}
-      {{ end }}
     </div>
   </div>
 {{ end }}
