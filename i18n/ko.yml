@@ -40,3 +40,6 @@
 - id: issues
   translation:
     other: 사건
+- id: culture_workers
+  translation:
+    other: 문화일꾼

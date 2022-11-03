@@ -10,6 +10,7 @@
     "creators" .Params.creators
     "venues" .Params.venues
     "sources" .Params.sources
+    "culture_workers" .Params.culture_workers
   -}}
   {{- with .Params.components -}}
     {{- $whole_url := printf "%s/%s" site.Params.bucketHostname (index . 0) -}}

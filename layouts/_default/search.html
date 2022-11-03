@@ -5,9 +5,9 @@
 {{ define "main" }}
 
 <div class="search" >
-  <div class="px-24 md:px-64 py-12 relative mx-auto bg-blue-600 dark:bg-gray-900 text-gray-100">
-    <form action="{{ .Permalink }}" class="mt-2 border-2 border-blue-600 dark:border-blue-00 bg-white h-14 rounded-lg text-gray-900 items-center focus:outline-none">
-      <input class="ml-5 mt-1 w-1/2 md:w-2/3 py-1 rounded-lg text-2xl focus:outline-none" id="search-query" name="q" placeholder="검색어를 입력하세요" />
+  <div class="px-64 md:px-8 py-12 relative mx-auto bg-blue-600 dark:bg-gray-900 text-gray-100">
+    <form action="{{ .Permalink }}" class="border-2 border-blue-600 dark:border-blue-00 bg-white h-14 rounded-lg text-gray-900 items-center focus:outline-none">
+      <input class="ml-5 mt-2 w-5/6 lg:w-4/5 md:w-3/4  py-1 rounded-lg text-lg md:text-base focus:outline-none" id="search-query" name="q" placeholder="검색어를 입력하세요" />
       <button type="submit" class="p-3 float-right">
         <svg class="text-gray-600 h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -21,7 +21,7 @@
   </div>
   <div class="flex flex-wrap md:mb-0">
     <div class="w-full h-full py-5 mb-4 md:mb-0 bg-gray-100 dark:bg-gray-800">
-      <div class="px-4 py-4 mb-40 relative mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" id="search-results"></div>
+      <div class="px-4 py-4 mb-40 relative mx-auto grid grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1" id="search-results"></div>
     </div>
   </div>
 </div>
@@ -31,21 +31,22 @@
 </div>
 
 <template id="search-result-template" >
-  <div class="search_summary w-full p-4">
-    <div class="bg-white border-2 p-6 rounded-lg">
-      <img class="search_ifthumb h-40 w-full rounded object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
-      <!-- <p class="search_iftitle" ></p> -->
-      <h2 class="post-title no-text-decoration text-blue-500 text-2xl"><a class="search_link search_title" href=""></a></h2>
+  <div class="search_summary w-full p-2">
+    <div class="bg-white border-2 p-4 rounded-lg">
+      <img class="search-if_thumb h-40 w-full rounded object-cover object-center mb-4" src="https://dummyimage.com/720x400" alt="content">
+      <!-- <p class="search-if_title" ></p> -->
+      <h2 class="post-title no-text-decoration text-blue-500 text-lg md:text-base"><a class="search_link search_title" href=""></a></h2>
         <p><em class="search_snippet"></em></p>
-        <p class="my-2 post-title no-text-decoration"><a class="search_link search_title" href=""></a></p>
-        <p class="my-2 search_iftags text-blue-500"><strong class="mr-3">Tags</strong><span class="search_tags"></span></p>
-        <p class="my-2 search_ifcategories"><strong>Categories</strong><em class="search_categories"></em></p>
-        <p class="my-2 search_ifcreators"><strong>Creators</strong><em class="search_creators"></em></p>
-        <p class="my-2 search_ifvenues"><strong>venues</strong><em class="search_venues"></em></p>
-        <p class="my-2 search_ifsubjects"><strong>subjects</strong><em class="search_subjects"></em></p>
-        <p class="my-2 search_ifsources"><strong>sources</strong><em class="search_sources"></em></p>
-        <p class="my-2 search_ifsummary"><em class="search_summary"></em></p>
-        <p class="my-2 search_ifdescription"><em class="search_description"></em></p>
+        <p class="my-2 md:text-xs post-title no-text-decoration"><a class="search_link search_title" href=""></a></p>
+        <p class="my-2 md:text-xs search-if_tags text-blue-500"><strong class="mr-3">태그</strong><span class="search_tags"></span></p>
+        <p class="my-2 md:text-xs search-if_categories"><strong>카테고리</strong><em class="search_categories"></em></p>
+        <p class="my-2 md:text-xs search-if_creators"><strong>조직</strong><em class="search_creators"></em></p>
+        <p class="my-2 md:text-xs search-if_venues"><strong>장소</strong><em class="search_venues"></em></p>
+        <p class="my-2 md:text-xs search-if_subjects"><strong>주제</strong><em class="search_subjects"></em></p>
+        <p class="my-2 md:text-xs search-if_culture_workers"><strong>문화일꾼</strong><em class="search_culture_workers"></em></p>
+        <p class="my-2 md:text-xs search-if_sources"><strong>sources</strong><em class="search_sources"></em></p>
+        <p class="my-2 md:text-xs search-if_summary"><em class="search_summary"></em></p>
+        <p class="my-2 md:text-xs search-if_description"><em class="search_description"></em></p>
     </div>
   </div>
 </template>

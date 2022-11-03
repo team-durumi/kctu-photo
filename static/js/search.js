@@ -19,6 +19,7 @@ let fuseOptions = {
     {name:"creators",weight:0.5},
     {name:"venues",weight:0.5},
     {name:"sources",weight:0.5},
+    {name:"culture_workers",weight:0.5},
     {name:"subjects",weight:0.5},
     {name:"contents",weight:0.3}
   ]
@@ -52,7 +53,7 @@ function executeSearch(searchQuery) {
       let result = fuse.search(searchQuery);
       document.getElementById("wait").classList.add('hidden');
       if (result.length > 0) {
-        document.querySelector('#result-count').innerHTML = '<span class="p-2 rounded font-bold bg-green-500 text-white">' +result.length + '</span>';
+        document.querySelector('#result-count').innerHTML = '<span class="p-2 rounded font-bold bg-green-500 text-white">' +result.length + '건</span>';
         populateResults(result);
       } else {
         document.getElementById('search-results').innerHTML = "<p class=\"no-results\">검색 결과가 없습니다.</p>";
@@ -126,51 +127,57 @@ function populateResults(result){
     // frag.querySelector(".search_snippet").textContent = decoded;
     let image = value.item.image;
     if (image) {
-      frag.querySelector(".search_ifthumb").setAttribute('src', image);
+      frag.querySelector(".search-if_thumb").setAttribute('src', image);
     } else {
-      frag.querySelector(".search_ifthumb").remove();
+      frag.querySelector(".search-if_thumb").remove();
     }
     let tags = value.item.tags;
-    const tagTempalte = '<a href="/tags/{tag}" class="inline-block w-max mr-1 px-2 py-1 mb-2 bg-white dark:bg-black border-2 border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-blue-600 dark:text-blue-500 strong">{tag}</a>';
-    if (tags) {
+    const tagTemplate = '<a href="/tags/{tag}" class="inline-block w-max mr-1 px-2 py-1 mb-2 bg-white dark:bg-black border-2 border-blue-600 dark:border-blue-500 border box-border rounded-2xl text-sm text-blue-600 dark:text-blue-500 strong">{tag}</a>';
+    if (tags && tags.length > 0 && tags.indexOf("") === -1) {
       let tagItems = '';
       tags.forEach(tag => {
-        tagItems += tagTempalte.replace(/{\s*(\w+?)\s*}/g, (_, token) => tag || '');
+        tagItems += tagTemplate.replace(/{\s*(\w+?)\s*}/g, (_, token) => tag || '');
       });
       frag.querySelector(".search_tags").innerHTML = tagItems;
     } else {
       console.log('tag empty');
-      frag.querySelector(".search_iftags").remove();
+      frag.querySelector(".search-if_tags").remove();
     }
     let creators = value.item.creators;
     if (creators && creators.length > 0 && creators.indexOf("") === -1) {
       frag.querySelector(".search_creators").textContent = creators;
     } else {
-      frag.querySelector(".search_ifcreators").remove();
+      frag.querySelector(".search-if_creators").remove();
     }
     let venues = value.item.venues;
     if (venues && venues.length > 0 && venues.indexOf("") === -1) {
       frag.querySelector(".search_venues").textContent = venues;
     } else {
-      frag.querySelector(".search_ifvenues").remove();
+      frag.querySelector(".search-if_venues").remove();
+    }
+    let culture_workers = value.item.culture_workers;
+    if (culture_workers && culture_workers.length > 0 && culture_workers.indexOf("") === -1) {
+      frag.querySelector(".search_culture_workers").textContent = culture_workers;
+    } else {
+      frag.querySelector(".search-if_culture_workers").remove();
     }
     let sources = value.item.sources;
     if (sources && sources.length > 0 && sources.indexOf("") === -1) {
       frag.querySelector(".search_sources").textContent = sources;
     } else {
-      frag.querySelector(".search_ifsources").remove();
+      frag.querySelector(".search-if_sources").remove();
     }
     let subjects = value.item.subjects;
     if (subjects && subjects.length > 0 && subjects.indexOf("") === -1) {
       frag.querySelector(".search_subjects").textContent = subjects;
     } else {
-      frag.querySelector(".search_ifsubjects").remove();
+      frag.querySelector(".search-if_subjects").remove();
     }
     let categories = value.item.categories;
     if (categories && categories.length > 0 && categories.indexOf("") === -1) {
       frag.querySelector(".search_categories").textContent = categories;
     } else {
-      frag.querySelector(".search_ifcategories").remove();
+      frag.querySelector(".search-if_categories").remove();
     }
     snippetHighlights.forEach( function (snipvalue, snipkey) {
       let markjs = new Mark(frag);
