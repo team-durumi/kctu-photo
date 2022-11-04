@@ -14,7 +14,11 @@ module.exports = {
       md: {'max': '768px'},
       sm: {'max': '480px'},
     },
-
+    minHeight: {
+      'screen-1/2': '50vh',
+      'screen-2/3': '66vh',
+      'screen-3/4': '75vh',
+    },
     extend: {
       spacing: {
         '128': '32rem',
