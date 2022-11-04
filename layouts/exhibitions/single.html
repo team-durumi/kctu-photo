@@ -5,7 +5,7 @@
 {{ define "main" }}
   <div class="flex flex-wrap">
     <div class="w-1/4 md:w-full px-5 py-5 md:px-0 md:pb-0 bg-gray-100 dark:bg-gray-800">
-      {{ partial "roll/browse/aside-default.html" . }}
+      {{ partial "roll/browse/aside-default.html" ( dict "root" (.Site.GetPage "/") "node" . "level" 0 ) }}
     </div>
     <div class="w-3/4 md:w-full h-full pt-6 pb-10 bg-gray-100 dark:bg-gray-800">
       <div class="bg-white rounded-lg">

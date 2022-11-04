@@ -19,6 +19,9 @@
 - id: copyright_status
   translation:
     other: 저작권 사용가능
+- id: items
+  translation:
+    other: 사진
 - id: posts
   translation:
     other: 공지사항

@@ -1,8 +1,8 @@
-{{ $child_pages := union .Sections .Pages }}
+{{ $child_pages := union .node.Sections .node.Pages }}
 {{ range $child_pages.ByTitle }}
   {{ if or (.Sections) (.Pages) }}
     <div x-data="{ open: {{ .IsAncestor $.CurrentSection }} }">
-      <button @click="open = !open" class="w-full flex justify-between items-center py-3 px-6 text-gray-600 cursor-pointer hover:bg-blue-100 hover:text-gray-700 focus:outline-none">
+      <button @click="open = !open" class="w-full flex justify-between items-center py-3 pl-{{add 6 (mul $.level 2) }} pr-6 text-gray-600 cursor-pointer hover:bg-blue-100 hover:text-gray-700 focus:outline-none">
         <span class="flex text-left">
           <a href="{{ .Permalink }}">
             <span class="font-medium">{{ .Title }}</span>
@@ -16,12 +16,12 @@
         </span>
       </button>
       <div x-show="open" class="text-gray-600">
-        {{ partial "roll/browse/aside-recursive.html" . }}
+        {{ partial "roll/browse/aside-recursive.html" ( dict "node" . "level" ( add $.level 1 ) ) }}
       </div>
     </div>
   {{ else }}
     <li class="block">
-      <a href="{{ .Permalink }}" class="block w-full h-full py-2 pl-8 pr-10 text-sm text-gray-900 dark:text-gray-100 hover:bg-blue-500 hover:text-gray-100">
+      <a href="{{ .Permalink }}" class="block w-full h-full py-2 pl-{{add 6 (mul $.level 2) }} pr-10 text-sm text-gray-900 dark:text-gray-100 hover:bg-blue-500 hover:text-gray-100">
         {{ .Title }}
       </a>
     </li>
