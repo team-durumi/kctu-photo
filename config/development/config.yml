@@ -1,4 +1,4 @@
-baseURL: https://kctu.durumi.io
+baseURL: https://kctu-photo.durumi.io
 
 ignoreFiles:
   - "items/2020년/1월/.*"
