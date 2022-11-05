@@ -1,3 +1,4 @@
+baseURL: https://kctu.durumi.io
 
 ignoreFiles:
   - "items/2020년/1월/.*"
@@ -10,7 +11,7 @@ ignoreFiles:
   - "items/2020년/8월/.*"
   - "items/2020년/9월/.*"
   - "items/2020년/10월/.*"
-  - "items/2020년/11월/.*"                
+  - "items/2020년/11월/.*"
   - "items/2021년/3월/.*"
   - "items/2021년/4월/.*"
   - "items/2021년/5월/.*"
