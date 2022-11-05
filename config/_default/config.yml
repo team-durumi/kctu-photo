@@ -1,7 +1,6 @@
 # https://gohugo.io/getting-started/configuration/
 
 title: 민주노총 아카이브
-baseURL: https://photo.kctu.org
 languageCode: ko-kr
 hasCJKLanguage: true
 paginate: 60

@@ -1,3 +1,5 @@
+baseURL: https://photo.kctu.org
+
 # ignoreFiles:
 #   - "items/2020년/1월/.*"
 #   - "items/2020년/2월/.*"
