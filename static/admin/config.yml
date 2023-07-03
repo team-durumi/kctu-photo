@@ -25,14 +25,34 @@ collections:
         name: "components"
         widget: "list"
         field: {label: Image, name: image, widget: string}
-      - label: "생산자Creators"
+      - label: "주제 subjects"
+        name: "subjects"
+        widget: "list"
+        allow_add: true
+        default: ["정치정책"]
+      - label: "조직 creators"
         name: "creators"
         widget: "list"
         allow_add: true
-        default: ["총연맹"]        
+        default: ["민주노총"]         
+      - label: "장소 venues"
+        name: "venues"
+        widget: "list"
+        allow_add: true
+        default: ["국회"]
+      - label: "행사 events"
+        name: "events"
+        widget: "list"
+        allow_add: true
+        default: ["기자회견"]       
+      - label: "사건 issues"
+        name: "issues"
+        widget: "list"
+        allow_add: true
+        default: ["코로나19"]              
     # adding a meta object with a path property allows editing the path of entries
     # moving an existing entry will move the entire sub tree of the entry to the new location
-    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
   - name: 'post'
     label: 'Post'
     folder: 'content/posts'
