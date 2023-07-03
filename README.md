@@ -2,6 +2,8 @@
 
 ## development
 
+hugo v0.115.0+extended
+
 ### hugo project scaffold로 시작합니다.
 
 - https://github.com/mozodev/hugo-project
