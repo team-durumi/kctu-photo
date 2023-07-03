@@ -21,6 +21,10 @@ collections:
       - label: Summary
         name: summary
         widget: string
+      - label: "사진이미지(목록)"
+        name: "components"
+        widget: "list"
+        field: {label: Image, name: image, widget: string}
       - label: "생산자Creators"
         name: "creators"
         widget: "list"
@@ -28,7 +32,7 @@ collections:
         default: ["총연맹"]        
     # adding a meta object with a path property allows editing the path of entries
     # moving an existing entry will move the entire sub tree of the entry to the new location
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
   - name: 'post'
     label: 'Post'
     folder: 'content/posts'
