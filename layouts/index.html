@@ -3,10 +3,85 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "marketing/oneline-posts" . }}
-  {{ partial "marketing/slider-alpine" . }}
-	{{- with .Site.GetPage "/exhibitions/photo-today/21-11-25.md" }}
-		{{ partial "marketing/photo-of-the-day" . }}
-	{{ end -}}
-  {{ partial "marketing/list-photos" . }}
+<div class="search" >
+  <div class="px-64 md:px-8 py-36 relative mx-auto bg-blue-600 dark:bg-gray-900 text-gray-700">
+    <form action="{{ .Permalink }}search" class="border-2 border-gray-400 dark:border-blue-00 bg-white h-16 rounded-lg text-gray-600 items-center focus:outline-none">
+      <input class="ml-5 mt-2 w-5/6 lg:w-4/5 md:w-3/4 py-1 rounded-lg text-2xl md:text-base focus:outline-none" id="search-query" name="q" placeholder="검색어를 입력하세요" />
+      <button type="submit" class="p-3 float-right">
+        <svg class="text-gray-600 h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+          viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+          width="512px" height="512px">
+          <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+        </svg>
+      </button>
+    </form>
+    <div id="result-count" class="mt-5 text-center"></div>
+  </div>
+  <div class="flex flex-wrap md:mb-0">
+    <div class="w-full h-full py-5 mb-4 md:mb-0 bg-white dark:bg-gray-800">
+      <div class="px-4 py-4 relative mx-auto grid grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1" id="search-results"></div>
+    </div>
+  </div>
+</div>
+
+<div id="wait" class="flex justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 items-center hidden">
+  <div class="animate-spin rounded-full h-32 w-32 border-b-8 border-blue-500"></div>
+</div>
+
+<template id="search-result-template" >
+  <div class="search_summary w-full p-2">
+    <div class="bg-white border-2 p-4 rounded-lg">
+      <img class="search-if_thumb h-40 w-full rounded object-cover object-center mb-4" src="https://dummyimage.com/720x400" alt="content">
+      <!-- <p class="search-if_title" ></p> -->
+      <h2 class="post-title no-text-decoration text-blue-500 text-lg md:text-base"><a class="search_link search_title" href=""></a></h2>
+        <p><em class="search_snippet"></em></p>
+        <p class="my-2 md:text-xs post-title no-text-decoration"><a class="search_link search_title" href=""></a></p>
+        <p class="my-2 md:text-xs search-if_tags text-blue-500"><strong class="mr-3">태그</strong><span class="search_tags"></span></p>
+        <p class="my-2 md:text-xs search-if_categories"><strong>카테고리</strong><em class="search_categories"></em></p>
+        <p class="my-2 md:text-xs search-if_creators"><strong>조직</strong><em class="search_creators"></em></p>
+        <p class="my-2 md:text-xs search-if_venues"><strong>장소</strong><em class="search_venues"></em></p>
+        <p class="my-2 md:text-xs search-if_subjects"><strong>주제</strong><em class="search_subjects"></em></p>
+        <p class="my-2 md:text-xs search-if_culture_workers"><strong>문화일꾼</strong><em class="search_culture_workers"></em></p>
+        <p class="my-2 md:text-xs search-if_sources"><strong>sources</strong><em class="search_sources"></em></p>
+        <p class="my-2 md:text-xs search-if_summary"><em class="search_summary"></em></p>
+        <p class="my-2 md:text-xs search-if_description"><em class="search_description"></em></p>
+    </div>
+  </div>
+</template>
+{{- with .Site.GetPage "/exhibitions/photo-today/21-11-25.md" }}
+{{ partial "marketing/photo-of-the-day" . }}
+{{ end -}}
+{{ partial "marketing/list-photos" . }}
+{{ partial "basic/footer-wide.html" . }}
 {{ end }}
+
+{{ define "footer" }}
+  <!-- If you don't need IE 11 support you can remove this next script block -->
+  <script type="text/javascript">
+    // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
+    if (window.navigator.userAgent.indexOf('Trident/') > 0) {
+      let urls = [
+        {{ "js/libs/iecompat/promises.min.js" | absURL }},
+        {{ "js/libs/iecompat/fetch.min.js" | absURL }},
+        {{ "js/libs/iecompat/template.min.js" | absURL }},
+        {{ "js/libs/iecompat/remove.min.js" | absURL }}
+      ];
+      let head = document.getElementsByTagName("head")[0];
+      urls.forEach(function(url) {
+        let script = document.createElement("script");
+        script.src = url;
+        head.appendChild(script);
+      });
+    }
+    // @license-end
+  </script>
+  <!-- These are the two libraries needed for current browsers. -->
+  <script src={{ "js/libs/fuse.js/3.2.1/fuse.min.js" | absURL }}></script>
+  <script src={{ "js/libs/mark.js/9.0.0/mark.min.js" | absURL }}></script>
+
+  <!-- Below works *only if* this theme component is named "hugo-search-fuse-js"
+       AND *if* the themesDir is left at the default value of "themes".  -->
+  <script src={{ printf "%s?%s" ("js/search.js" | absURL) }}></script>
+{{ end }}
+
